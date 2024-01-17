@@ -12,6 +12,7 @@ This repository is a sample chatbot using the Anthropic company's LLM [Claude 2]
 
 ## 📚 Supported Languages
 
+- Deutsch 💬
 - English 💬
 - 日本語 💬 (ドキュメントは[こちら](./docs/README_ja.md))
 - 한국어 💬

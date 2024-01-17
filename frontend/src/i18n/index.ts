@@ -11,6 +11,10 @@ export const LANGUAGES: {
   label: string;
 }[] = [
   {
+    value: 'de',
+    label: 'Deutsch',
+  },
+  {
     value: 'en',
     label: 'English',
   },
