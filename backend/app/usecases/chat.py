@@ -1,8 +1,5 @@
 import json
 import logging
-from datetime import datetime
-from typing import Literal
-
 from app.bedrock import _create_body, get_model_id, invoke
 from app.repositories.conversation import (
     RecordNotFoundError,
@@ -20,6 +17,8 @@ from app.repositories.model import (
 from app.route_schema import ChatInput, ChatOutput, Content, Conversation, MessageOutput
 from app.usecases.bot import fetch_bot, modify_bot_last_used_time
 from app.utils import get_buffer_string, get_current_time
+from datetime import datetime
+from typing import Literal
 from ulid import ULID
 
 logger = logging.getLogger(__name__)
@@ -27,7 +26,7 @@ logger.setLevel(logging.DEBUG)
 
 
 def prepare_conversation(
-    user_id: str, chat_input: ChatInput
+        user_id: str, chat_input: ChatInput
 ) -> tuple[str, ConversationModel]:
     current_time = get_current_time()
 
@@ -150,7 +149,7 @@ def get_invoke_payload(conversation: ConversationModel, chat_input: ChatInput):
 
 
 def trace_to_root(
-    node_id: str | None, message_map: dict[str, MessageModel]
+        node_id: str | None, message_map: dict[str, MessageModel]
 ) -> list[MessageModel]:
     """Trace message map from leaf node to root node."""
     result = []
@@ -226,9 +225,10 @@ def chat(user_id: str, chat_input: ChatInput) -> ChatOutput:
 
 
 def propose_conversation_title(
-    user_id: str,
-    conversation_id: str,
-    model: Literal["claude-instant-v1", "claude-v2"] = "claude-instant-v1",
+        user_id: str,
+        conversation_id: str,
+        model: Literal[
+            "claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-3-haiku", "claude-3-opus"] = "claude-instant-v1",
 ) -> str:
     PROMPT = """Reading the conversation above, what is the appropriate title for the conversation? When answering the title, please follow the rules below:
 <rules>
