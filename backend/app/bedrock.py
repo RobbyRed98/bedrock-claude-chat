@@ -16,7 +16,7 @@ def _create_body(model: str, prompt: str):
 
 
 def _extract_output_text(model: str, response) -> str:
-    if model in ("claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-3-haiku", "claude-3-opus"):
+    if model in ("claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-v3-haiku", "claude-v3-opus"):
         output = json.loads(response.get("body").read())
         output_txt = output["completion"]
         if output_txt[0] == " ":
