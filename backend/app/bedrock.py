@@ -7,7 +7,7 @@ client = get_bedrock_client()
 
 
 def _create_body(model: str, prompt: str):
-    if model in ("claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-3-haiku", "claude-3-opus"):
+    if model in ("claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-v3-haiku", "claude-v3-opus"):
         parameter = GENERATION_CONFIG
         parameter["prompt"] = prompt
         return json.dumps(parameter)

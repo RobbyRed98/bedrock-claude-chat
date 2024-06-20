@@ -11,7 +11,7 @@ class ContentModel(BaseModel):
 class MessageModel(BaseModel):
     role: str
     content: ContentModel
-    model: Literal["claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-3-haiku", "claude-3-opus"]
+    model: Literal["claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-v3-haiku", "claude-v3-opus"]
     children: list[str]
     parent: str | None
     create_time: float

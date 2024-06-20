@@ -228,7 +228,7 @@ def propose_conversation_title(
         user_id: str,
         conversation_id: str,
         model: Literal[
-            "claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-3-haiku", "claude-3-opus"] = "claude-instant-v1",
+            "claude-instant-v1", "claude-v2", "claude-v3-sonnet", "claude-v3-haiku", "claude-v3-opus"] = "claude-instant-v1",
 ) -> str:
     PROMPT = """Reading the conversation above, what is the appropriate title for the conversation? When answering the title, please follow the rules below:
 <rules>
